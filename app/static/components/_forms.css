@@ -1,0 +1,78 @@
+/* _forms.css */
+
+/* Imports */
+@import 'base/_variables.css';
+
+/* Login Form */
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styling for the login form */
+.form-wrapper {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0; /* Remove default margins */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width: 450px;
+    padding: 20px;
+    background-color: var(--disabled-background-color); /* Dark card background */
+    border: 1px solid var(--border-color); /* Dark border */
+    border-radius: var(--border-radius-medium); /* More rounded corners */
+}
+
+.form .form-group {
+    width: 400px; /* Full width for form groups */
+    margin-bottom: var(--margin-bottom);
+}
+
+.form label {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--primary-color); /* Light accent color for labels */
+}
+
+.form input[type="text"],
+.form input[type="password"] {
+    width: 100%; /* Adjust input width with padding and border */
+    padding: 10px; /* Padding for input fields */
+    margin-bottom: 0; /* Space between inputs */
+    background-color: var(--text-box-background-color); /* Dark input background */
+    border: 1px solid var(--border-color); /* Dark border for inputs */
+    border-radius: var(--border-radius-small); /* Rounded corners */
+    color: var(--text-color); /* Light text color */
+}
+
+.form input[type="submit"],
+.form .btn-primary {
+    background-color: var(--primary-color); /* Light purple button */
+    color: var(--alternate-text-color); /* Dark text color */
+    padding: 10px 20px; /* Padding for submit button */
+    border: none; /* No border for submit button */
+    border-radius: var(--border-radius-small); /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Full width button */
+    margin-top: var(--margin-top); /* Space above the button */
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+}
+
+.form input[type="submit"]:hover,
+.form .btn-primary:hover {
+    background-color: var(--button-background-hover-color); /* Darker purple on hover */
+    color: var(--text-color); /* Light text color */
+}
+
+.form .button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ensure buttons take full width */
+}

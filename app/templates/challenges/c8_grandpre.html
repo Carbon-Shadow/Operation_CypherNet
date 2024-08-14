@@ -1,0 +1,216 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Grandpre Cipher{% endblock %}
+
+{% block content %}
+
+{% include 'components/timer.html' %}
+<main>
+    <div class="main-container">
+    {% include 'components/challenge_button.html' %}
+        <div class="intro">
+            <h2 class="title">Grandpre Cipher Challenge</h2>
+            <p>The Grandpré cipher, while not widely known or documented in historical records, is specifically associated with the work of French cryptanalyst and cryptographer Jean-Baptiste Joseph Fourier. He was a prominent figure in the field of cryptography and played a role in developing various cryptographic techniques. The Grandpré cipher is notable for its use of a 10x10 grid and homophonic substitution, making it a sophisticated method for its time.</p>
+            <p>Military and Diplomatic Use: Like many cryptographic systems, the Grandpré cipher was primarily used for military and diplomatic communication. During periods of conflict or political intrigue, such methods were crucial for secure communication.</p><br>   
+            <span style="font-weight: bold;">Security Considerations:</span>
+            <ul>
+                <li>Homophonic Substitution: This method improves security over simple substitution ciphers by mitigating frequency analysis attacks. However, it's still vulnerable to other types of cryptographic attacks if not properly implemented.</li>
+                <li>Complexity: The complexity of the cipher can be increased by introducing more symbols, adjusting the grid size, or using advanced methods for grid generation and symbol assignment.</li>
+            </ul>
+        </div>
+        <div class="example">
+            <h3>How it Works:</h3>
+            <ol>
+            <li><strong>Encryption Process:</strong></li>
+            <ul>
+                <li>To encrypt a letter, locate it in the grid and substitute it with one of the symbols assigned to it.</li>
+                <li>The specific symbol chosen for a letter can be based on predefined rules or randomly selected from the available options.</li>
+            </ul>
+
+            <li><strong>Decryption Process:</strong></li>
+            <ul>
+                <li>To decrypt, the process is reversed: locate the symbol in the grid and determine the corresponding letter based on the pre-agreed mapping.</li>
+            </ul>
+            <p>Plaintext: <strong>ABC</strong></p>
+            <p>Encrypted: <strong>74 24 99</strong></p>
+            </ol>
+        </div>
+
+        <div class="challenge-container">
+            <table class="challenge-table">
+                <h3>Grandpre Cipher Translator</h3>
+                
+                <tbody>
+                    <tr>
+                        <td> </td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>V</td>
+                        <td>O</td>
+                        <td>L</td>
+                        <td>U</td>
+                        <td>P</td>
+                        <td>T</td>
+                        <td>U</td>
+                        <td>E</td>
+                        <td>U</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>I</td>
+                        <td>N</td>
+                        <td>Q</td>
+                        <td>U</td>
+                        <td>I</td>
+                        <td>E</td>
+                        <td>T</td>
+                        <td>U</td>
+                        <td>D</td>
+                        <td>E</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>M</td>
+                        <td>A</td>
+                        <td>J</td>
+                        <td>E</td>
+                        <td>S</td>
+                        <td>T</td>
+                        <td>U</td>
+                        <td>E</td>
+                        <td>U</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>O</td>
+                        <td>B</td>
+                        <td>L</td>
+                        <td>I</td>
+                        <td>G</td>
+                        <td>E</td>
+                        <td>A</td>
+                        <td>N</td>
+                        <td>C</td>
+                        <td>E</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>U</td>
+                        <td>N</td>
+                        <td>I</td>
+                        <td>F</td>
+                        <td>O</td>
+                        <td>R</td>
+                        <td>M</td>
+                        <td>I</td>
+                        <td>T</td>
+                        <td>E</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>T</td>
+                        <td>W</td>
+                        <td>I</td>
+                        <td>C</td>
+                        <td>K</td>
+                        <td>E</td>
+                        <td>N</td>
+                        <td>H</td>
+                        <td>A</td>
+                        <td>M</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>I</td>
+                        <td>N</td>
+                        <td>G</td>
+                        <td>O</td>
+                        <td>L</td>
+                        <td>S</td>
+                        <td>T</td>
+                        <td>A</td>
+                        <td>D</td>
+                        <td>T</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>E</td>
+                        <td>I</td>
+                        <td>N</td>
+                        <td>S</td>
+                        <td>I</td>
+                        <td>E</td>
+                        <td>D</td>
+                        <td>E</td>
+                        <td>L</td>
+                        <td>N</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>R</td>
+                        <td>Y</td>
+                        <td>M</td>
+                        <td>K</td>
+                        <td>I</td>
+                        <td>E</td>
+                        <td>W</td>
+                        <td>I</td>
+                        <td>C</td>
+                        <td>Z</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>S</td>
+                        <td>H</td>
+                        <td>R</td>
+                        <td>E</td>
+                        <td>W</td>
+                        <td>S</td>
+                        <td>B</td>
+                        <td>U</td>
+                        <td>R</td>
+                        <td>Y</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-wrapper">
+            <div class="form">
+                <p>Decode the following text:</p>
+                <p><span style="color: chartreuse; font-size: x-large;"><strong>{{ challenge_text }}</strong></span></p>
+
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.text.label }}
+                        {{ form.text(size=32) }}
+                    </div>
+                    <div class="button-container">
+                        {{ form.submit(class_="btn-primary") }}
+                    </div>
+                </form>
+
+                {% if result %}
+                    <h3>Encoded Text:</h3>
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,163 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Morse Code{% endblock %}
+
+{% block content %}
+
+{% include 'components/timer.html' %}
+
+
+<main>
+    <div class="main-container">
+        {% include 'components/challenge_button.html' %}
+        <div class="container">
+            <div class="index">
+                <h2 class="title">Morse Code</h2>
+                <p>Morse code is a method used to encode text characters as sequences of dots and dashes, which can be transmitted as sound, light, or visual signals. It was developed in the early 1830s by Samuel Morse and Alfred Vail for use in telegraphy, a system of long-distance communication.</p>
+
+                <h3>Components of Morse Code:</h3>
+                <ul>
+                    <li><strong>Dots (•):</strong> Represented by a short signal.</li>
+                    <li><strong>Dashes (—):</strong> Represented by a longer signal.</li>
+                    <li><strong>Spaces:</strong> There are different types of spaces in Morse code:
+                        <ul>
+                            <li><strong>Intra-character spaces:</strong> Space between parts of the same letter (shortest).</li>
+                            <li><strong>Inter-character spaces:</strong> Space between letters (medium length).</li>
+                            <li><strong>Inter-word spaces:</strong> Space between words (longest).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Transmission Methods:</h3>
+                <ul>
+                    <li><strong>Auditory:</strong> Using sounds of varying lengths.</li>
+                    <li><strong>Visual:</strong> Using flashes of light or visible signals.</li>
+                    <li><strong>Mechanical:</strong> Using movements, like tapping.</li>
+                </ul>
+
+                <h3>Applications:</h3>
+                <ul>
+                    <li><strong>Telegraphy:</strong> Originally for long-distance communication over telegraph lines.</li>
+                    <li><strong>Radio Communications:</strong> Especially in amateur radio.</li>
+                    <li><strong>Aviation and Navigation:</strong> Used in aviation beacons and maritime signaling.</li>
+                    <li><strong>Emergency Signaling:</strong> Universal distress signal (SOS).</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h3>Examples:</h3>
+                <table>
+                    <tr>
+                        <th>Character</th>
+                        <th>Morse Code</th>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>• —</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>— • • •</td>
+                    </tr>
+                    <tr>
+                        <td>SOS</td>
+                        <td>• • • — — — • • •</td>
+                    </tr>
+                </table><br>
+                <p>Morse code is an early form of digital communication, representing data in binary form (dots and dashes). Despite newer technologies, it remains a vital skill for certain applications and is appreciated for its simplicity and effectiveness.</p>
+            </div>
+        </div>
+
+
+        <div class="challenge-container">
+            <table class="challenge-table">
+                <h3>Morse Code Translator</h3>
+                <thead>
+                    <tr>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                        <th>G</th>
+                        <th>H</th>
+                        <th>I</th>
+                        <th>J</th>
+                        <th>K</th>
+                        <th>L</th>
+                        <th>M</th>
+                        <th>N</th>
+                        <th>O</th>
+                        <th>P</th>
+                        <th>Q</th>
+                        <th>R</th>
+                        <th>S</th>
+                        <th>T</th>
+                        <th>U</th>
+                        <th>V</th>
+                        <th>W</th>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>Z</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>.-</strong></td>
+                        <td><strong>-...</strong></td>
+                        <td><strong>-.-.</strong></td>
+                        <td><strong>-..</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>..-.</strong></td>
+                        <td><strong>--.</strong></td>
+                        <td><strong>....</strong></td>
+                        <td><strong>..</strong></td>
+                        <td><strong>.---</strong></td>
+                        <td><strong>-.-</strong></td>
+                        <td><strong>.-..</strong></td>
+                        <td><strong>--</strong></td>
+                        <td><strong>-.</strong></td>
+                        <td><strong>---</strong></td>
+                        <td><strong>.--.</strong></td>
+                        <td><strong>--.-</strong></td>
+                        <td><strong>.-.</strong></td>
+                        <td><strong>...</strong></td>
+                        <td><strong>-</strong></td>
+                        <td><strong>..-</strong></td>
+                        <td><strong>...-</strong></td>
+                        <td><strong>.--</strong></td>
+                        <td><strong>-..-</strong></td>
+                        <td><strong>-.--</strong></td>
+                        <td><strong>--..</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-wrapper">
+            <div class="form">
+                <p>Decode the following text:</p>
+                <p><span style="color: chartreuse; font-size: xx-large;"><strong>{{ challenge_text }}</strong></span></p>
+
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.text.label }}
+                        {{ form.text(size=32) }}
+                    </div>
+                    <div class="button-container">
+                        {{ form.submit(class_="btn-primary") }}
+                    </div>
+                </form>
+
+                {% if result %}
+                    <h3>Encoded Text:</h3>
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

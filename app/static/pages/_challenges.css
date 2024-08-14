@@ -1,0 +1,71 @@
+/* _challenges.css */
+
+/* Grid container styles */
+.challenge-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 equal columns */
+    grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
+    gap: 10px;
+    grid-template-areas:
+      "caesar morse binary atbash karmasutra rail_fence"
+      "homophonic grandpre null alphabetical_ranks trithemius ubchi"
+      "killswitch killswitch killswitch killswitch killswitch killswitch";
+}
+
+/* Grid item styles */
+.challenge-card {
+    background: var(--background-color); /* Adjust background */
+    border: 1px solid var(--border-color); /* Adjust border */
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.challenge-card a, h3, p {
+    text-decoration: none;
+    color: inherit;
+}
+
+.challenge-card.challenge-complete {
+    background: var(--disabled-background-color); /* Different background for completed challenges */
+    cursor: not-allowed;
+}
+
+.challenge-card:hover{
+    background-color: var(--disabled-background-color); /* Dark hover color */
+    text-decoration: none;
+}
+
+/* Style for killswitch */
+.killswitch {
+    background: transparent; /* No background color */
+    color: inherit; /* Optional: keep text color unchanged */
+    border-color: transparent;
+}
+
+/* Ensure special card does not change on hover */
+.killswitch:hover {
+    background: transparent; /* Ensure no background change on hover */
+    cursor: default; /* Optional: change cursor to default if needed */
+}
+
+/* Grid area specific styles */
+.caesar { grid-area: caesar; }
+.morse { grid-area: morse; }
+.binary { grid-area: binary; }
+.atbash { grid-area: atbash; }
+.karmasutra { grid-area: karmasutra; }
+.rail_fence { grid-area: rail_fence; }
+.homophonic { grid-area: homophonic; }
+.grandpre { grid-area: grandpre; }
+.null { grid-area: null; }
+.alphabetical_ranks { grid-area: alphabetical_ranks; }
+.trithemius { grid-area: trithemius; }
+.ubchi { grid-area: ubchi; }
+.killswitch { grid-area: killswitch; }

@@ -1,0 +1,38 @@
+<header>
+    <div class="header-container">
+        <!-- Logo Left -->
+        <div class="a">
+            <img src="{{ url_for('static', filename='NewSyndicate.png') }}" alt="Left Logo">
+        </div>
+        
+        <!-- Title -->
+        <div class="b">
+            <h1>Operation CypherNet</h1>
+            <p>Defend the Nation. Destroy the Network.</p>
+       
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('challenge') }}">Scenario</a></li>
+                    <li><a href="{{ url_for('challenge_list') }}">Challenges</a></li>
+                    <li><a href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        
+            <!-- User information -->
+            <div class="user-info">
+                {% if current_user.is_authenticated %}
+                    <p>Logged in as: <span id='username'> {{ current_user.username }}</span></p>
+                {% else %}
+                    <p>Not logged in</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="c">
+            <img src="{{ url_for('static', filename='NewSyndicate.png') }}" alt="Right Logo">
+        </div>
+
+    </div>
+    
+</header>

@@ -1,0 +1,45 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Challenge - Your Website{% endblock %}
+
+{% block content %}
+         
+<main>        
+    <div class="main-container">
+
+        <h2>Situation:</h2>
+        <p>Our intelligence operatives have intercepted network traffic indicating that "The Syndicate" intends to leverage CypherNet to deploy a highly sophisticated malware. This malware poses an imminent threat to critical national infrastructure, including power grids, financial systems, and communication networks. Our intelligence operatives have uncovered alarming evidence suggesting that The Syndicate's operatives have implemented a fail-safe mechanism within CypherNet. Upon detection of unauthorized infiltration, a 15-minute countdown timer is triggered. Failure to input the designated killswitch code within this timeframe will result in the automatic release of the malware, unleashing catastrophic consequences upon its intended targets.</p>
+
+        <h2>Mission Objective:</h2>
+        <p>Your mission, is to infiltrate CypherNet, decrypt their encrypted communications, and uncover the details of this impending malware deployment. Time is of the essence, as we have a narrow window of opportunity to thwart this threat before it's too late.</p>
+
+        <h2>Operational Tasks:</h2>
+        <h3> 1. Decrypt the Messages:</h3>
+        <li>Utilize your cryptographic skills to decrypt The Syndicate's encrypted communications, extracting any relevant information regarding the malware deployment.</li>
+
+        <h3>2. Solve Challenges:</h3>
+        <li>Confront various cipher challenges designed to obscure The Syndicate's plans.</li>
+        <li>Apply strategic thinking and problem-solving skills to overcome these obstacles swiftly and efficiently.</li>
+
+        <h3>3. Collect Intel</h3>
+        <li>Gather actionable intelligence from intercepted communications, encrypted files, and hidden clues scattered throughout CypherNet's network.</li>
+
+        <h3>4. Unlock the Final Key:</h3>
+        <li>Piece together decrypted messages and deciphered clues to reveal the killswith code to shutdown the network before its too late.</li>
+
+        <h2>Finally:</h2>
+        <p>Team,</p>
+                
+        <p>The situation is dire. The fail-safe mechanism embedded within CypherNet by The Syndicate presents an imminent threat to national security. Your skills, resourcefulness, and determination will be essential as we navigate this treacherous terrain and race against the clock. Lives hang in the balance, and the fate of critical infrastructure is at stake. Let's move with precision, act decisively, and work together to neutralize this threat. </p>
+    
+        <p>Time is of the essence. Let's get to work. </p>
+
+        <p>Your operation begins now!</p>
+
+        
+
+        <button onclick="location.href='{{ url_for('challenge_list') }}'">Start Mission</button>
+    </div>
+</main>
+
+{% endblock %}

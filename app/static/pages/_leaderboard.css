@@ -1,0 +1,47 @@
+/* _leaderboard.css */
+
+/* Leaderboard Container */
+.leaderboard-container {
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #1a1a1a, #333); /* Gradient background */
+    color: #fff; /* Light text color */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    opacity: 0.8; /* Opacity value */
+}
+
+.leaderboard-container h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: var(--primary-color); /* Light text color */
+}
+
+/* Leaderboard Table Styles */
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #444; /* Darker border color */
+}
+
+.leaderboard-table th {
+    background-color: #333; /* Darker header background */
+    color: #fff; /* Light text color */
+    font-weight: bold;
+    border-top-left-radius: 8px; /* Rounded top left corner */
+    border-top-right-radius: 8px; /* Rounded top right corner */
+}
+
+.leaderboard-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light hover color */
+    transition: background-color 0.3s;
+}

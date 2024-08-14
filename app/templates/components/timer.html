@@ -1,0 +1,27 @@
+<!-- Countdown timer -->
+
+<div class="timer">
+        <h3>Time remaining: <span id="result"></span></h3>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="{{ url_for('static', filename='jquery.js') }}">\x3C/script>');
+</script>
+<script type="text/javascript">
+    const root_url = {{ request.root_url|tojson|safe }};
+    const intervalID = setInterval(update_values, 1000);
+
+    function update_values() {
+        $.getJSON(root_url + "_timer", data => {
+            console.log(data);  // Debugging: log the received data
+            $("#result").text(data.result);
+            if (data.result === "00:00") {
+                clearInterval(intervalID);
+                if (data.redirect) {
+                    window.location.href = data.redirect;
+                }
+            }
+        });
+    }
+</script>

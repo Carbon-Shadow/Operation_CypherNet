@@ -1,0 +1,26 @@
+<header>
+    <div class="header-container">
+        <div class="a">
+            <img src="{{ url_for('static', filename='NewSyndicate.png') }}" alt="Left Logo">
+        </div>
+        
+        <div class="b">
+            <h1>Operation CypherNet</h1>
+            <p>Defend the Nation. Destroy the Network.</p>
+       
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="c">
+            <img src="{{ url_for('static', filename='NewSyndicate.png') }}" alt="Right Logo">
+        </div>
+    </div>
+    
+    
+</header>

@@ -1,0 +1,188 @@
+
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Binary Code{% endblock %}
+
+{% block content %}
+
+{% include 'components/timer.html' %}
+
+
+<main>
+    <div class="main-container">
+        {% include 'components/challenge_button.html' %}
+        <div class="intro">
+            <h2 class="title">Binary Code</h2>
+            <p>Binary is a way of counting using only two numbers: 0 and 1. It’s like our regular counting system, which uses ten numbers (0-9), but binary just uses 0 and 1. Each number in binary is called a bit.</p>
+            <p>Computers use binary because their parts, like tiny switches, can only be off or on. When the switch is off, it’s a 0. When the switch is on, it’s a 1. By using lots of these switches together, computers can do math, store information, and run programs.</p>
+            <p>In binary, just like in our regular system, you can add, subtract, and do other math operations. For example, in binary, the number 2 is written as 10, and the number 3 is written as 11.</p>
+            <p>Binary is also used in things like IP addresses, which help identify different devices on the internet. Each device gets a unique binary address so it can be found and communicated with.</p>
+            <p>So, binary is super important because it’s how computers understand and work with information!</p>
+        </div>
+        <div class="example">
+            <h3>How Binary is Used:</h3>
+            <ul>
+                <li>Numbers: Represented and manipulated using binary digits.</li>
+                <li>Text: Characters encoded using ASCII or Unicode.</li>
+                <li>Images, Audio, Video: Media stored and transmitted in binary format.</li>
+                <li><strong>Digital Logic and Circuits:</strong>
+            </ul>
+            <ul>
+                <li>Computers process operations and decisions based on binary logic.</li>
+                <li>Logic gates manipulate binary values to perform computations.</li>
+            </ul><br>
+
+            <strong>Storage and Transmission:</strong>
+            <ul>
+                <li>Data stored on storage devices and transmitted over networks in binary form.</li>
+            </ul><br>
+            
+            <strong>Programming Languages:</strong>
+            <ul>
+                <li>High-level languages compiled into binary machine code for execution.</li>
+            </ul><br>
+            
+            <strong>Control Systems:</strong>
+            <ul>
+                <li>Used in automation and robotics for control signals.</li>
+            </ul><br>
+            
+            <p>Binary is the foundation of how computers understand and process information, enabling the digital technologies we rely on.</p>
+        </div>
+
+        <div class="challenge-container">
+            <table class="challenge-table">
+                <h3>Binary Code Translator</h3>
+                <thead>
+                    <tr>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                        <th>G</th>
+                        <th>H</th>
+                        <th>I</th>
+                        <th>J</th>
+                        <th>K</th>
+                        <th>L</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>01000001</strong></td>
+                        <td><strong>01000010</strong></td>
+                        <td><strong>01000011</strong></td>
+                        <td><strong>01000100</strong></td>
+                        <td><strong>01000101</strong></td>
+                        <td><strong>01000110</strong></td>
+                        <td><strong>01000111</strong></td>
+                        <td><strong>01001000</strong></td>
+                        <td><strong>01001001</strong></td>
+                        <td><strong>01001010</strong></td>
+                        <td><strong>01001011</strong></td>
+                        <td><strong>01001100</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="challenge-container">
+            <table class="challenge-table">
+                <thead>
+                    <tr>
+                        <th>M</th>
+                        <th>N</th>
+                        <th>O</th>
+                        <th>P</th>
+                        <th>Q</th>
+                        <th>R</th>
+                        <th>S</th>
+                        <th>T</th>
+                        <th>U</th>
+                        <th>V</th>
+                        <th>W</th>
+                        <th>X</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>01001101</strong></td>
+                        <td><strong>01001110</strong></td>
+                        <td><strong>01001111</strong></td>
+                        <td><strong>01010000</strong></td>
+                        <td><strong>01010001</strong></td>
+                        <td><strong>01010010</strong></td>
+                        <td><strong>01010011</strong></td>
+                        <td><strong>01010100</strong></td>
+                        <td><strong>01010101</strong></td>
+                        <td><strong>01010110</strong></td>
+                        <td><strong>01010111</strong></td>
+                        <td><strong>01011000</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="challenge-container">
+            <table class="challenge-table">
+                        <thead>
+                    <tr>
+                        <th>Y</th>
+                        <th>Z</th>
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>01011001</strong></td>
+                        <td><strong>01011010</strong></td>
+                        <td><strong>00110000</strong></td>
+                        <td><strong>00110001</strong></td>
+                        <td><strong>00110010</strong></td>
+                        <td><strong>00110011</strong></td>
+                        <td><strong>00110100</strong></td>
+                        <td><strong>00110101</strong></td>
+                        <td><strong>00110110</strong></td>
+                        <td><strong>00110111</strong></td>
+                        <td><strong>00111000</strong></td>
+                        <td><strong>00111001</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+            
+        <div class="form-wrapper">
+            <div class="form">
+                <p>Decode the following text:</p>
+                <p><span style="color: chartreuse; font-size: x-large;"><strong>{{ challenge_text }}</strong></span></p>
+
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.text.label }}
+                        {{ form.text(size=32) }}
+                    </div>
+                    <div class="button-container">
+                        {{ form.submit(class_="btn-primary") }}
+                    </div>
+                </form>
+
+                {% if result %}
+                    <h3>Encoded Text:</h3>
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

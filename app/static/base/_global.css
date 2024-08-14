@@ -1,0 +1,19 @@
+/* _global.css */
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    width: 95%;
+
+}
+
+.main-container #login{
+    justify-content: center;
+}

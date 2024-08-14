@@ -1,0 +1,20 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Home - Your Website{% endblock %}
+
+{% block content %}
+<main>
+    <div class="main-container">
+        <h2 class="answer">Congratulations! Mission Successful.</h2>
+        <p>You managed to take down CypherNet and stop Syndicates attack.</p>
+
+        <div class="video-container">
+            
+            <video autoplay muted loop controls id="challenge-complete-video">
+                <source src="{{ url_for('static', filename='challenge_complete.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</main>
+{% endblock %}

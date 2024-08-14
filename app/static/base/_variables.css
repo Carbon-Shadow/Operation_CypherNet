@@ -1,0 +1,51 @@
+/* _variables.css */
+
+:root {
+    /* Color Palette */
+    --background-color: #333; /* Adjusted to the last value defined */
+    --text-color: #fff;
+    --alternate-text-color: #121212;
+    --button-background-color: #BB86FC;
+    --button-background-hover-color: #6200EE;
+    --disabled-background-color: #222;
+    --text-box-background-color: #444;
+    --primary-color: #BB86FC;
+    --secondary-color: #14ee00;
+    --third-color: #ff00f2;
+    --border-color: #555;
+  
+    /* Typography */
+    --font-family: Arial, sans-serif;
+    --font-size-h1: 3rem; 
+    --font-size-h2: 2rem;   /* 32px */
+    --font-size-h3: 1.5rem;
+    --font-size-base: 1.125rem; /* 18px */
+    --font-size-large: 1.25em;  /* 20px (assuming 1em = 16px) */
+    --font-size-small: 0.875em; /* 14px (assuming 1em = 16px) */
+    --line-height-base: 1.5; 
+    --font-weight-normal: 400; 
+    --font-weight-bold: 700; 
+  
+    /* Spacing */
+    --spacing-small: 0.5rem; /* 8px */
+    --spacing-medium: 1rem; /* 16px */
+    --spacing-large: 1.5rem; /* 24px */
+     --spacing-xlarge: 2rem; /* 32px */
+  
+    /* Border Radius */
+    --border-radius-small: 5px;
+    --border-radius-medium: 10px;
+    --border-radius-large: 15px;
+
+    /* Container */
+    --container-width: 80%;
+    --container-max-width: 1200px;
+    --container-padding: 20px;
+
+    /* Margin */
+    --margin-top: 10px;
+    --margin-bottom: 15px;
+
+    /* Button */
+    --button-width: 200px;
+}

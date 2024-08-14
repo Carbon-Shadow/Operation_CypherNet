@@ -1,0 +1,131 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Homophonic Cipher{% endblock %}
+
+{% block content %}
+
+{% include 'components/timer.html' %}
+
+<main>
+    <div class="main-container">
+        {% include 'components/challenge_button.html' %}
+        <div class="intro">
+            <h2 class="title">Homophonic Cipher Challenge</h2>
+            <p>The homophonic cipher is a substitution cipher that uses a correspondence table between the letters/characters of the plain message and one or more letters/numbers/groups of characters. Consequently, the same letter may have several possible encryptions and the same message will possibly have several possible encrypted versions. The homophonic cipher helps hide the frequency of letters used in a message, thus making frequency analysis more difficult for a cryptanalyst.</p><br>          
+            
+            <h3>How it Works:</h3>
+            <ol>
+            For example, with a key of 3:
+            <ul>
+                    <li>Create a correspondence table where each letter in the plaintext is mapped to one or more possible symbols, numbers, or groups of characters.</li>
+                    <li>To encrypt a message, replace each letter in the plaintext with a randomly chosen symbol from its corresponding set in the table.</li>
+                    <li>Ensure that the same letter in the plaintext can be replaced by different symbols each time it appears, making the frequency distribution less apparent.</li>
+                    <li>To decrypt the message, use the correspondence table to map the symbols back to their original letters.</li>
+            </ul> <br>
+            </ol>
+        </div>
+        <div class="example">
+            Example - Correspondence Table
+            <ul>
+                <li>A: 12, 34, 56</li>
+                <li>B: 78, 90, 12</li>
+                <li>C: 34, 56, 78</li>
+            </ul>
+            <p>Plaintext: <strong>ABC</strong></p>
+            <p>Encrypted: <strong>12 90 78</strong></p>
+            </ol>
+        </div>
+    
+        <div class="challenge-container">
+            <table class="challenge-table">
+                <h3>Homophonic Cipher Translator</h3>
+                <thead>
+                    <tr>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                        <th>G</th>
+                        <th>H</th>
+                        <th>I</th>
+                        <th>J</th>
+                        <th>K</th>
+                        <th>L</th>
+                        <th>M</th>
+                        <th>N</th>
+                        <th>O</th>
+                        <th>P</th>
+                        <th>Q</th>
+                        <th>R</th>
+                        <th>S</th>
+                        <th>T</th>
+                        <th>U</th>
+                        <th>V</th>
+                        <th>W</th>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>Z</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>21 27 31 40</td>
+                        <td>15</td>
+                        <td>01 33</td>
+                        <td>20 34</td>
+                        <td>22 28 32 36 37</td>
+                        <td>05</td>
+                        <td>17</td>
+                        <td>14</td>
+                        <td>02 29 38 41</td>
+                        <td>19</td>
+                        <td>03</td>
+                        <td>07 39 42</td>
+                        <td>09 43</td>
+                        <td>12 48 97</td>
+                        <td>18 60 85</td>
+                        <td>26 44</td>
+                        <td>25</td>
+                        <td>24 49</td>
+                        <td>10 30 45 99</td>
+                        <td>06 96 55</td>
+                        <td>16 94</td>
+                        <td>23</td>
+                        <td>13</td>
+                        <td>11</td>
+                        <td>08</td>
+                        <td>04</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="form-wrapper">
+            <div class="form">
+                <p>Decode the following text:</p>
+                <p><span style="color: chartreuse; font-size: x-large;"><strong>{{ challenge_text }}</strong></span></p>
+
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.text.label }}
+                        {{ form.text(size=32) }}
+                    </div>
+                    <div class="button-container">
+                        {{ form.submit(class_="btn-primary") }}
+                    </div>
+                </form>
+
+                {% if result %}
+                    <h3>Encoded Text:</h3>
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

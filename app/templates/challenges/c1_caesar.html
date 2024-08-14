@@ -1,0 +1,131 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Caesar Cipher{% endblock %}
+
+{% block content %}
+
+{% include 'components/timer.html' %}
+
+
+<main>
+    <div class="main-container">
+        {% include 'components/challenge_button.html' %}
+        <div class="container"> <!-- Updated class to 'container' -->
+            <div class="intro">
+                <h2 class="title">Caesar Cipher Challenge</h2>
+                <p>A Caesar cipher is a simple and ancient encryption technique where each letter in the plaintext is shifted a certain number of places down or up the alphabet. 
+                    It's named after Julius Caesar, who reportedly used this method to encrypt his correspondence.</p>
+            </div>
+            <div class="example">
+                <h3>How it Works:</h3>
+                <ol>
+                    <li><strong>For example, with a key of 3:</strong></li>
+                    <ul>
+                        <li>A becomes D</li>
+                        <li>B becomes E</li>
+                        <li>C becomes F</li>
+                        <li>and so on...</li>
+                    </ul>
+                    <li><strong>Wrap around at the end of the alphabet, so:</strong></li>
+                    <ul>
+                        <li>X becomes A</li>
+                        <li>Y becomes B</li>
+                        <li>Z becomes C</li>
+                    </ul>
+                </ol><br>
+                <p>To decrypt a message encrypted with a Caesar cipher, you simply shift the letters back by the same number of places.</p>
+            </div>
+
+            <div class="challenge-container">
+                <h3>Caesar Cipher Translator</h3>
+                <table class="challenge-table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>C</th>
+                            <th>D</th>
+                            <th>E</th>
+                            <th>F</th>
+                            <th>G</th>
+                            <th>H</th>
+                            <th>I</th>
+                            <th>J</th>
+                            <th>K</th>
+                            <th>L</th>
+                            <th>M</th>
+                            <th>N</th>
+                            <th>O</th>
+                            <th>P</th>
+                            <th>Q</th>
+                            <th>R</th>
+                            <th>S</th>
+                            <th>T</th>
+                            <th>U</th>
+                            <th>V</th>
+                            <th>W</th>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>Z</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>D</td>
+                            <td>E</td>
+                            <td>F</td>
+                            <td>G</td>
+                            <td>H</td>
+                            <td>I</td>
+                            <td>J</td>
+                            <td>K</td>
+                            <td>L</td>
+                            <td>M</td>
+                            <td>N</td>
+                            <td>O</td>
+                            <td>P</td>
+                            <td>Q</td>
+                            <td>R</td>
+                            <td>S</td>
+                            <td>T</td>
+                            <td>U</td>
+                            <td>V</td>
+                            <td>W</td>
+                            <td>X</td>
+                            <td>Y</td>
+                            <td>Z</td>
+                            <td>A</td>
+                            <td>B</td>
+                            <td>C</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="form-wrapper">
+                <div class="form">
+                    <p>Decode the following text:</p>
+                    <p><span style="color: chartreuse; font-size: x-large;"><strong>{{ challenge_text }}</strong></span></p>
+
+                    <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+                        <div class="form-group">
+                            {{ form.text.label }}
+                            {{ form.text(size=32) }}
+                        </div>
+                        <div class="button-container">
+                            {{ form.submit(class_="btn-primary") }}
+                        </div>
+                    </form>
+
+                    {% if result %}
+                        <h3>Encoded Text:</h3>
+                        <p>{{ result }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

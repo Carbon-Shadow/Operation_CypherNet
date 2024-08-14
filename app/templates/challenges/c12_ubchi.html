@@ -1,0 +1,192 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Ubchi Cipher{% endblock %}
+
+{% block content %}
+
+{% include 'components/timer.html' %}
+<main>
+    <div class="main-container">
+        {% include 'components/challenge_button.html' %}
+        <div class="intro">
+            <h2>Ubchi Cipher Challenge</h2>
+            <p>The Ubchi cipher is a transposition cipher, a type of classical encryption method that rearranges the characters of the plaintext according to a certain system to create the ciphertext. Here’s a detailed explanation of how the Ubchi cipher works:</p>
+        </div>
+        <div class="example">
+            <h3>How it Works:</h3>
+            <ol>
+            <li><strong>Choose a Keyword:</strong></li>
+            <ul>
+                <li>Select a keyword. The length of this keyword will determine the number of columns.</li>
+                <li>Example Keyword: KEY</li><br>
+            </ul>
+
+            <li><strong>Arrange the Plaintext in a Grid:</strong></li>
+            <ul>
+                <li>Write the plaintext in rows under the keyword, filling the grid column by column. If the plaintext does not fill the grid perfectly, you may need to pad it with extra characters (like X).</li>
+                <li>Example Plaintext: 'HELLO'</li><br>
+
+            </ul>
+            </ol>
+        </div>
+
+        <div class="challenge-container">
+            <table class="challenge-table">
+                <h3>Ubchi Cipher Example</h3>
+                <thead>
+                    <tr>
+                        <th>K</th>
+                        <th>E</th>
+                        <th>Y</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>H</td>
+                        <td>E</td>
+                        <td>L</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>O</td>
+                        <td>X</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+
+            <li><strong>Number the Columns:</strong></li>
+            <ul>
+                <li>Assign numbers to the columns based on the alphabetical order of the keyword. (E.g. CAT = ACT) </li>
+            </ul>
+
+        <div class="example">
+            <div class="challenge-container">
+                <table class="challenge-table">
+                    <h3>Ubchi Cipher Example</h3>
+                    <thead>
+                        <tr>
+                            <th>E</th>
+                            <th>K</th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>E</td>
+                            <td>H</td>
+                            <td>L</td>
+                        </tr>
+                        <tr>
+                            <td>O</td>
+                            <td>L</td>
+                            <td>X</td>
+                        </tr>
+                    </tbody>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>Read Columns by the Number Order:</h3>
+            <ol>
+
+            <li><strong>For example, with a key of 3:</strong></li>
+            <ul>
+                <li>1st column (E): E O</li>
+                <li>2nd column (K): H L</li>
+                <li>3rd column (Y): L X</li>
+            </ul>
+
+            <p>Ciphertext: <strong>EOHLXL</strong></p>
+        </div>
+
+        <h3>Use the template to complete the task:</h3>
+        <div class="challenge-container">
+            <h3>Ubchi Cipher Template</h3>
+            <table class="editable-table">
+                <tbody>
+                    <tr>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="challenge-container">
+            <h3>Ubchi Cipher Template</h3>
+            <table class="editable-table">
+                <tbody>
+                    <tr>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="form-wrapper">
+            <div class="form">
+                <p>Decode the following text: (Key = KEY)</p>
+                <p><span style="color: chartreuse; font-size: x-large;"><strong>{{ challenge_text }}</strong></span></p>
+
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.text.label }}<br>
+                        {{ form.text(size=32) }}<br>
+                    </div>
+                    <div class="button-container">
+                        {{ form.submit(class_="btn-primary") }}
+                    </div>
+                </form>
+
+                {% if result %}
+                    <h3>Encoded Text:</h3>
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

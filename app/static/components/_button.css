@@ -1,0 +1,27 @@
+/* _button.css */
+
+button {
+    background-color: var(--primary-color); /* Light purple button */
+    color: var(--alternate-text-color); /* Dark text color */
+    padding: 10px 20px; /* Padding for submit button */
+    border: none; /* No border for submit button */
+    border-radius: var(--border-radius-small); /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: var(--button-width); /* Full width button */
+    margin-top: var(--margin-top); /* Space above the button */
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+}
+
+button {
+    display: flex;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: var(--button-background-hover-color); /* Darker purple on hover */
+    color: var(--text-color); /* Light text color */
+}
+
+
+

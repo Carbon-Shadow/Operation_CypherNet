@@ -1,0 +1,170 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Pigpen Cipher{% endblock %}
+
+{% block content %}
+
+{% include 'components/timer.html' %}
+{% include 'components/challenge_button.html' %}
+
+<section id="information-section">
+    <div id="index-content">
+        <h2>Pigpen Cipher</h2>
+        <p>The pigpen cipher is a basic monoalphabetic substitution cipher that dates back to ancient times. It has many names: tic-tac-toe, Rosicrucian, Napoleon, Freemason, and masonic cipher. It uses a divided geometry of two grid types and some strategically placed dots that map to a plaintext letter.</p>
+
+        <h3>How Pigpen Cipher is Used:</h3>
+        <ul>
+            <li><strong>Historical Context:</strong>
+                <ul>
+                    <li>Used by various groups such as the Freemasons in the 18th century.</li>
+                    <li>Examples include encrypting simple messages with easily recognizable symbols.</li>
+                </ul>
+            </li>
+            <li><strong>Modern Usage:</strong>
+                <ul>
+                    <li>Found in puzzles, games, and educational settings to demonstrate basic encryption techniques.</li>
+                    <li>Popular among hobbyists and those interested in historical ciphers.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>Pigpen cipher provides a simple method of encoding and decoding messages using a substitution system based on geometric symbols.</p>
+
+        <h3>Complete Translator Table:</h3>
+        <table>
+            <tr>
+                <th>Letter</th>
+                <th>Symbol</th>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>⊔</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>⊓</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>⊏</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>⊐</td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td>⊒</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td>⊑</td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td>┐</td>
+            </tr>
+            <tr>
+                <td>H</td>
+                <td>┘</td>
+            </tr>
+            <tr>
+                <td>I</td>
+                <td>└</td>
+            </tr>
+            <tr>
+                <td>J</td>
+                <td>⌊</td>
+            </tr>
+            <tr>
+                <td>K</td>
+                <td>⌋</td>
+            </tr>
+            <tr>
+                <td>L</td>
+                <td>⌈</td>
+            </tr>
+            <tr>
+                <td>M</td>
+                <td>⌉</td>
+            </tr>
+            <tr>
+                <td>N</td>
+                <td>⌋⌈</td>
+            </tr>
+            <tr>
+                <td>O</td>
+                <td>⌊⌉</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td>⌉⌊</td>
+            </tr>
+            <tr>
+                <td>Q</td>
+                <td>⌈⌋</td>
+            </tr>
+            <tr>
+                <td>R</td>
+                <td>⌋⌉</td>
+            </tr>
+            <tr>
+                <td>S</td>
+                <td>\ /</td>
+            </tr>
+            <tr>
+                <td>T</td>
+                <td>/ \</td>
+            </tr>
+            <tr>
+                <td>U</td>
+                <td>\ /</td>
+            </tr>
+            <tr>
+                <td>V</td>
+                <td>/ \</td>
+            </tr>
+            <tr>
+                <td>W</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>X</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Y</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>Z</td>
+                <td>/</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+
+
+<div id="challenge-form" class="login-form">
+    <p>Encode the following text using the Pigpen cipher:</p>
+    <p><span style="color: chartreuse; font-size: x-large; text-align: center;"><strong>{{ challenge_text }}</strong></span></p>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.text.label }}<br>
+            {{ form.text(size=32) }}<br>
+        </div>
+        <div class="button-container">
+            {{ form.submit(class_="btn-primary") }}
+        </div>
+    </form>
+
+    {% if result %}
+        <h3>Encoded Text:</h3>
+        <p>{{ result }}</p>
+    {% endif %}
+</div>
+
+{% endblock %}

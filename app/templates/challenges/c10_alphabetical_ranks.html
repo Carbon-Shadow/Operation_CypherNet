@@ -1,0 +1,175 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Alphabetical Ranks Added Cipher{% endblock %}
+
+{% block content %}
+
+{% include 'components/timer.html' %}
+<main>
+    <div class="main-container">
+        {% include 'components/challenge_button.html' %}
+        <div class="intro">
+            <h2 class="title">Alphabetical Ranks Added Cipher Challenge</h2>
+            <p>The Alphabetical Ranks Added (ARA) cipher is indeed a simple encryption method that falls under the category of substitution ciphers. Its simplicity makes it an excellent introduction to cryptography, while its basic structure can be adapted for more complex uses.</p>
+            <h3>How it Works:</h3>
+            <ol>
+            <li><strong>Assign Numerical Values:</strong></li>
+            <ul>
+                <li>Each letter of the alphabet is assigned a numerical value. For example, A=1, B=2, C=3, ..., Z=26.</li>
+            </ul>
+            <li><strong>Encrypting a Message:</strong></li>
+            <ul>
+                <li>To encrypt a message, you first convert each letter to its corresponding numerical value. Then, you add a fixed number to each value. This fixed number is often referred to as the "key" for the cipher. For example, if your key is 3, you would add 3 to each numerical value of the letters in the message.</li>
+
+            </ul>
+            <li><strong>Handling Wraparounds:</strong></li>
+            <ul>
+                <li>If the addition causes the numerical value to exceed 26 (the number assigned to Z), you wrap around to the beginning of the alphabet. For instance, if the letter is X (24) and you add 3, the resulting number is 27. Since 27 exceeds 26, you wrap around and get 1 (which corresponds to A).</li>
+            </ul>
+            <li><strong>Convert Back to Letters:</strong></li>
+            <ul>
+                <li>Once you have the new numerical values after adding the key, convert these values back to letters to get the encrypted message.</li>
+            </ul>
+            </ol>
+        </div>
+
+
+
+        <div class="example">
+            <h2>Example:</h2>
+            <p>1. Convert to Numerical Values:</p>
+            <ul>
+                <li>C = 3</li>
+                <li>R = 18</li>
+                <li>Y = 25</li>
+                <li>P = 16</li>
+                <li>T = 20</li>
+                <li>O = 15</li>
+            </ul><br>
+            <p>2. Add the Key (7):</p>
+            <ul>
+                <li>C: 3 + 7 = 10 → J</li>
+                <li>R: 18 + 7 = 25 → Y</li>
+                <li>Y: 25 + 7 = 32 → 32 - 26 = 6 → F</li>
+                <li>P: 16 + 7 = 23 → W</li>
+                <li>T: 20 + 7 = 27 → 27 - 26 = 1 → A</li>
+                <li>O: 15 + 7 = 22 → V</li>
+            </ul><br>
+
+            <p>Encrypted Message: JYFWAV </p>
+            <p>1. Convert to Numerical Values:</p>
+            <ul>
+                <li>J = 10</li>
+                <li>Y = 25</li>
+                <li>F = 6</li>
+                <li>W = 23</li>
+                <li>A = 1</li>
+                <li>V = 22</li>
+            </ul>
+
+            <p>2. Subtract the Key (7):</p>
+            <ul>
+                <li>J: 10 - 7 = 3 → C</li>
+                <li>Y: 25 - 7 = 18 → R</li>
+                <li>F: 6 - 7 = -1 → -1 + 26 = 25 → Y</li>
+                <li>W: 23 - 7 = 16 → P</li>
+                <li>A: 1 - 7 = -6 → -6 + 26 = 20 → T</li>
+                <li>V: 22 - 7 = 15 → O</li>
+            </ul>
+            </ol>
+            <p>Decrypted Message: CRYPTO</p>
+        </div>
+
+
+        <div class="challenge-container">
+            <table class="challenge-table">
+                <h3>Alphabetical Numerical Value</h3>
+                <thead>
+                    <tr>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                        <th>G</th>
+                        <th>H</th>
+                        <th>I</th>
+                        <th>J</th>
+                        <th>K</th>
+                        <th>L</th>
+                        <th>M</th>
+                        <th>N</th>
+                        <th>O</th>
+                        <th>P</th>
+                        <th>Q</th>
+                        <th>R</th>
+                        <th>S</th>
+                        <th>T</th>
+                        <th>U</th>
+                        <th>V</th>
+                        <th>W</th>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>Z</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="form-wrapper">
+            <div class="form">
+                <p>Decode the following text:</p>
+                <p><span style="color: chartreuse; font-size: x-large;"><strong>{{ challenge_text }}</strong></span></p>
+
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.text.label }}
+                        {{ form.text(size=32) }}
+                    </div>
+                    <div class="button-container">
+                        {{ form.submit(class_="btn-primary") }}
+                    </div>
+                </form>
+
+                {% if result %}
+                    <h3>Encoded Text:</h3>
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

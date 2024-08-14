@@ -1,0 +1,63 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Null Cipher{% endblock %}
+
+{% block content %}
+
+{% include 'components/timer.html' %}
+<main>
+    <div class="main-container">
+        {% include 'components/challenge_button.html' %}
+        <div class="intro">
+            <h2 class="title">Null Cipher Challenge</h2>
+            <p>A null cipher is a type of cipher used to conceal a message within a seemingly innocent text. The actual message is hidden in the text, but the apparent message is meaningless or irrelevant. This technique allows the sender to transmit a hidden message without drawing attention.</p>
+        </div>
+        <div class="example">
+            <h3>How it Works:</h3>
+            <ol>
+            <li><strong>Choose an Innocent Sentence:</strong></li>
+            <ul>
+                <li>Start with a text that looks ordinary or is intended to look non-suspicious. This text will contain the hidden message.</li>
+
+            </ul>
+            <li><strong>Determine the Pattern - Decide on a pattern for extracting the hidden message. Common patterns include:</strong></li>
+            <ul>
+                <li>Taking the first letter of each word.</li>
+                <li>Taking specific letters from each word.</li>
+                <li>Using a keyword to select letters from the text.</li>
+            </ul>
+            <li><strong>Embed the Hidden Message:</strong></li>
+            <ul>
+                <li>Arrange the text so that, according to the chosen pattern, the hidden message can be deciphered. The rest of the text serves as a cover.</li>
+            </ul>
+            </ol>
+        </div>
+        <h3 style="color: chartreuse;">Hint: </h3>
+        <p>Key = First letter of each sentence.</p>
+
+        <div class="form-wrapper">
+            <div class="form">
+                <p>Decode the following text:</p>
+                <p><span style="color: chartreuse; font-size: large;"><strong>{{ challenge_text }}</strong></span></p>
+
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.text.label }}
+                        {{ form.text(size=32) }}
+                    </div>
+                    <div class="button-container">
+                        {{ form.submit(class_="btn-primary") }}
+                    </div>
+                </form>
+
+                {% if result %}
+                    <h3>Encoded Text:</h3>
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

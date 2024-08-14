@@ -1,0 +1,76 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Atbash Cipher{% endblock %}
+
+{% block content %}
+
+{% include 'components/timer.html' %}
+
+<main>
+    <div class="main-container">
+        {% include 'components/challenge_button.html' %}
+
+        <div class="intro">
+            <h2 class="title">Atbash Cipher</h2>
+            <p>The Atbash cipher is a type of simple substitution cipher originally used for the Hebrew alphabet but can be adapted for any alphabet, including the English alphabet. The principle behind the Atbash cipher is straightforward: each letter of the alphabet is mapped to its reverse counterpart. This means the first letter of the alphabet is replaced with the last letter, the second letter with the second-to-last, and so on.</p>
+
+            <h3>How Atbash Cipher is Used:</h3>
+            <ul>
+                <li><strong>Historical Context:</strong>
+                    <ul>
+                        <li>Used in ancient times to encrypt messages, such as in the Hebrew Bible.</li>
+                        <li>Examples include concealing names or locations by reversing letters.</li>
+                    </ul>
+                </li>
+                <li><strong>Modern Usage:</strong>
+                    <ul>
+                        <li>Found in puzzles, games, and educational settings to demonstrate basic encryption techniques.</li>
+                        <li>Not suitable for secure cryptographic purposes due to its vulnerability to frequency analysis.</li>
+                    </ul>
+                </li>
+            </ul><br>
+
+            <p>Atbash cipher provides a simple method of encoding and decoding messages based on alphabetical reversal.</p>
+        </div>
+
+        <div class="challenge-container">
+            <table class="challenge-table">
+                <h3>Atbash Cipher Translator</h3>
+                <thead>
+                    <tr>
+                        <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Z</td><td>Y</td><td>X</td><td>W</td><td>V</td><td>U</td><td>T</td><td>S</td><td>R</td><td>Q</td><td>P</td><td>O</td><td>N</td><td>M</td><td>L</td><td>K</td><td>J</td><td>I</td><td>H</td><td>G</td><td>F</td><td>E</td><td>D</td><td>C</td><td>B</td><td>A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-wrapper">
+            <div class="form">
+                <p>Decode the following text using the Atbash cipher:</p>
+                <p><span style="color: chartreuse; font-size: x-large; text-align: center;"><strong>{{ challenge_text }}</strong></span></p>
+
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.text.label }}
+                        {{ form.text(size=32) }}
+                    </div>
+                    <div class="button-container">
+                        {{ form.submit(class_="btn-primary") }}
+                    </div>
+                </form>
+
+                {% if result %}
+                    <h3>Decoded Text:</h3>
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

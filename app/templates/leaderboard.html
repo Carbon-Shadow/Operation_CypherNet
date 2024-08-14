@@ -1,0 +1,32 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Leaderboard{% endblock %}
+
+{% block content %}
+<div class="leaderboard-container">
+    <h2>Leaderboard</h2>
+    <table class="leaderboard-table">
+        <thead>
+            <tr>
+                <th scope="col">Pos</th>
+                <th scope="col">Username</th>
+                <th scope="col">Challenge Completed</th>
+                <th scope="col">Killswitch Activated</th>
+                <th scope="col">Time Remaining</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.total_challenges_completed }}</td>
+                <td>{{ 'Yes' if user.killswitch_activated else 'No' }}</td>
+                <td>{{ user.time_taken }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

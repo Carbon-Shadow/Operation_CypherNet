@@ -1,0 +1,182 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Home - Your Website{% endblock %}
+
+{% block content %}
+
+{% include 'components/timer.html' %}
+
+<main>
+    <div class="main-container">
+        <h2>Select a Challenge</h2>
+        <p>Complete the challenges to find out the code for the Killswitch and take CypherNet offline.</p>
+
+        <!-- Challenge grid -->
+        <div class="challenge-grid">
+            <!-- Challenge cards -->
+            {% if current_user.challenge1_completed %}
+                <div class="challenge-card caesar challenge-complete">
+                    <h3 class="title">Caesar Cipher</h3>
+                    <h1 class="answer">C</h1>
+                </div>
+            {% else %}
+                <a href="{{ url_for('caesar') }}" class="challenge-card caesar">
+                    <h3 class="title">Caesar Cipher</h3>
+                    <p>Caesar cipher was used by Julius Caesar for military communications in ancient Rome.</p>
+                </a>    
+            {% endif %}
+            
+            {% if current_user.challenge2_completed %}
+                <div class="challenge-card morse challenge-complete">
+                    <h3 class="title">Morse Code</h3>
+                    <h1 class="answer">1</h1>
+                </div>
+            {% else %}
+                <a href="{{ url_for('morse') }}" class="challenge-card morse">
+                    <h3 class="title">Morse Code</h3>
+                    <p>Morse code played a significant role during World War I and World War II. It was used extensively for military communication due to its reliability and simplicity.</p>
+                </a>    
+            {% endif %}
+            
+            {% if current_user.challenge3_completed %}
+                <div class="challenge-card binary challenge-complete">
+                    <h3 class="title">Binary Code</h3>
+                    <h1 class="answer">B</h1>
+                </div>
+            {% else %}
+                <a href="{{ url_for('binary') }}" class="challenge-card binary">
+                    <h3 class="title">Binary Code</h3>
+                    <p>Binary code is used in computing to represent and process all data and instructions, fundamental to how computers operate at the most basic level.</p>
+                </a>    
+            {% endif %}
+            
+            {% if current_user.challenge4_completed %}
+                <div class="challenge-card atbash challenge-complete">
+                    <h3 class="title">Atbash Cipher</h3>
+                    <h1 class="answer">3</h1>
+                </div>
+            {% else %}
+                <a href="{{ url_for('atbash') }}" class="challenge-card atbash">
+                    <h3 class="title">Atbash Cipher</h3>
+                    <p>Atbash cipher is used in puzzles, educational settings, and historical contexts for basic encryption and encoding purposes.</p>
+                </a>    
+            {% endif %} 
+            
+            {% if current_user.challenge5_completed %}
+                <div class="challenge-card karmasutra challenge-complete">
+                    <h3 class="title">Karmasutra Cipher</h3>
+                    <h1 class="answer">r</h1>
+                </div>
+            {% else %}
+                <a href="{{ url_for('karmasutra') }}" class="challenge-card karmasutra">
+                    <h3 class="title">Karmasutra Cipher</h3>
+                    <p>The Kamasutra Cipher (Mlecchita Vikalpa) dates back to the 4th century CE. Written by Indian philosopher Vātsyāyana, it's one of the 64 arts in the Kamasutra, focusing on simple substitution encryption and decryption.</p>
+                </a>    
+            {% endif %}
+            
+            {% if current_user.challenge6_completed %}
+                <div class="challenge-card rail_fence challenge-complete">
+                    <h3 class="title">Rail Fence Cipher</h3>
+                    <h1 class="answer">W</h1>
+                </div>
+            {% else %}
+                <a href="{{ url_for('rail_fence') }}" class="challenge-card rail_fence">
+                    <h3 class="title">Rail Fence Cipher</h3>
+                    <p>The Rail Fence cipher is a type of transposition cipher that encrypts text by writing it in a zigzag pattern across multiple "rails" or lines and then reading it off line by line.</p>
+                </a>    
+            {% endif %}
+            
+            {% if current_user.challenge7_completed %}
+                <div class="challenge-card homophonic challenge-complete">
+                    <h3 class="title">Homophonic Cipher</h3>
+                    <h1 class="answer">4</h1>
+                </div>
+            {% else %}
+                <a href="{{ url_for('homophonic') }}" class="challenge-card homophonic">
+                    <h3 class="title">Homophonic Cipher</h3>
+                    <p>The homophonic cipher is used in cryptography to enhance the security of encrypted messages by obscuring letter frequency, making it more difficult for cryptanalysts to perform frequency analysis and decode the message.</p>
+                </a>    
+            {% endif %}
+            
+            {% if current_user.challenge8_completed %}
+                <div class="challenge-card grandpre challenge-complete">
+                    <h3 class="title">Grandpre Cipher</h3>
+                    <h1 class="answer">r</h1>
+                </div>
+            {% else %}
+                <a href="{{ url_for('grandpre') }}" class="challenge-card grandpre">
+                    <h3 class="title">Grandpre Cipher</h3>
+                    <p>Like many cryptographic systems, the Grandpré cipher was primarily used for military and diplomatic communication. During periods of conflict or political intrigue, such methods were crucial for secure communication.</p>
+                </a>    
+            {% endif %}
+            
+            {% if current_user.challenge9_completed %}
+                <div class="challenge-card null challenge-complete">
+                    <h3 class="title">Null Cipher</h3>
+                    <h1 class="answer">F</h1>
+                </div>
+            {% else %}
+                <a href="{{ url_for('null') }}" class="challenge-card null">
+                    <h3 class="title">Null Cipher</h3>
+                    <p>A null cipher is a method of encoding a message by hiding it within a seemingly ordinary text, using a predetermined pattern to reveal the true content.</p>
+                </a>    
+            {% endif %}
+            
+            {% if current_user.challenge10_completed %}
+                <div class="challenge-card alphabetical_ranks challenge-complete">
+                    <h3 class="title">Alphabetical Ranks Added Cipher</h3>
+                    <h1 class="answer">a</h1>
+                </div>
+            {% else %}
+                <a href="{{ url_for('alphabetical_ranks') }}" class="challenge-card alphabetical_ranks">
+                    <h3 class="title">Alphabetical Ranks Added Cipher</h3>
+                    <p>The Alphabetical Ranks Added (ARA) cipher is an intriguing and relatively simple encryption technique.</p>
+                </a>    
+            {% endif %}
+            
+            {% if current_user.challenge11_completed %}
+                <div class="challenge-card trithemius challenge-complete">
+                    <h3 class="title">Trithemius Cipher</h3>
+                    <h1 class="answer">R</h1>
+                </div>
+            {% else %}
+                <a href="{{ url_for('trithemius') }}" class="challenge-card trithemius">
+                    <h3 class="title">Trithemius Cipher</h3>
+                    <p>The Trithemian cipher, developed by Johannes Trithemius, was primarily a theoretical exploration rather than a widely used practical encryption method.</p>
+                </a>    
+            {% endif %}
+            
+            {% if current_user.challenge12_completed %}
+                <div class="challenge-card ubchi challenge-complete">
+                    <h3 class="title">Übchi Cipher</h3>
+                    <h1 class="answer">3</h1>
+                </div>
+            {% else %}
+                <a href="{{ url_for('ubchi') }}" class="challenge-card ubchi">
+                    <h3 class="title">Übchi Cipher</h3>
+                    <p>Übchi is a double transposition cipher (with the same permutation key) used by the Germans during the First World War.</p>
+                </a>    
+            {% endif %}
+            
+            <!-- Kill Switch Form -->
+            <div class="challenge-card killswitch">
+                <div class="form-wrapper">
+                    <div class="form">
+                        <form method="POST" action="">
+                            {{ form.hidden_tag() }}
+                            <div class="form-group">
+                                {{ form.text.label }}
+                                {{ form.text(size=32) }}
+                            </div>
+                            <div class="button-container">
+                                {{ form.submit(class_="btn-primary") }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+/* _alerts.css */
+
+/* Styling for flash messages */
+div.success {
+    color: #4CAF50; /* Green color for success */
+}
+
+div.danger {
+    color: #ff0000; /* Red color for danger */
+}
+
+.flash-messages {
+    padding: 20px;
+}
+
+/* Styling for the flash messages */
+.flash-message {
+    margin-top: 15px;
+    color: #ff0000; /* Light accent color for error messages */
+}
+
+/* ALERT STYLING */
+.alert {
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+}
+
+.alert.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Video */
+.video-container {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0; /* Remove default margins */
+}
+video {
+    max-width: 100%;
+    border: 1px solid #555;
+    border-radius: 10px;
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+/* Firefox specific */
+video::-moz-media-controls {
+    display: none !important;
+}
+
+/* Standardize for other browsers */
+video::media-controls {
+    display: none !important;
+}

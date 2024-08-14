@@ -1,0 +1,165 @@
+
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Rail Fence Code{% endblock %}
+
+{% block content %}
+
+{% include 'components/timer.html' %}
+{% include 'components/challenge_button.html' %}
+
+<main>
+    <div class="main-container">
+        <div class="intro">
+            <h2 class="title">Rail Fence Code</h2>
+            <p>The Rail Fence Cipher is a classic transposition cipher used in cryptography. It’s known for its simplicity and educational value, though it's not used for serious encryption today. Here's a detailed look at how it works, its historical use, and its principles.</p><br>
+            <strong>Modern Usage</strong>      
+            <p>Today, the Rail Fence Cipher is rarely used for serious encryption due to its simplicity and vulnerability to attack. It is more commonly employed in educational contexts and recreational cryptography to help learners understand the fundamentals of encryption and decryption. For secure communication, modern cryptographic algorithms such as AES (Advanced Encryption Standard) are used.</p>
+        </div>
+        <div class="example">
+            <h3>Decryption Process::</h3>
+            <ul>
+                <li><strong> Reconstruct the Zigzag Pattern </strong>> - Create an empty grid with the same number of rails, and fill it in with the characters from the encrypted message.</li>
+                <li><strong>Fill the Grid</strong> - Place the characters in the zigzag pattern using the same rules as the encryption, but now you're filling in the grid rather than reading it. Making sure to leave a gap for the space between words.</li>
+                <li><strong>Read the ZigZag Order</strong> - Once the grid is filled, read the characters in the zigzag pattern to reconstruct the original message.</li>
+            </ul>
+        </div>
+
+        <div class="challenge-container">
+            <table class="challenge-table">
+                <h3>Rail Fence Cipher Example</h3>
+
+                <tbody>
+                    <tr>
+                        <td><strong>H</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>O</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>R</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>.</strong></td>
+                        <td><strong>E</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>L</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>O</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>L</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>L</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>W</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>.</strong></td>
+                        <td><strong>D</strong></td>
+                        <td><strong>.</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <h3>Example code:</h3>
+        <p>HOR EL.OL LWD</p>
+        <h3>Example answer:</h3>
+        <p>HELLO WORLD</p><br>
+        
+        <h3>Use the template to complete the task:</h3>
+        <div class="challenge-container">
+            <h3>Rail Fence Cipher Template</h3>
+            <table class="editable-table">
+                <tbody>
+                    <tr>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                        <td><input type="text" value="" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="form-wrapper">
+            <div class="form">
+                <p>Decode the following text:</p>
+                <p><span style="color: chartreuse; font-size: x-large;"><strong>{{ challenge_text }}</strong></span></p>
+
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.text.label }}
+                        {{ form.text(size=32) }}
+                    </div>
+                    <div class="button-container">
+                        {{ form.submit(class_="btn-primary") }}
+                    </div>
+                </form>
+
+                {% if result %}
+                    <h3>Encoded Text:</h3>
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

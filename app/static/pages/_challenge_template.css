@@ -1,0 +1,118 @@
+/* _challenge_template.css */
+
+.container {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto auto auto; 
+    gap: 10px; 
+    grid-template-areas: 
+      "intro"
+      "example"
+      "translator"
+      "answer-form"; 
+}
+
+.intro { grid-area: intro; }
+.example { grid-area: example; }
+.translator { grid-area: translator; } /* Ensure you have a div with class 'translator' in HTML */
+.answer-form { grid-area: answer-form; } /* Ensure you have a div with class 'answer-form' in HTML */
+
+/* Challenge Container */
+.challenge-container {
+    text-align: center;
+    width: 100%;
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #1a1a1a, #333); /* Gradient background */
+    color: #fff; /* Light text color */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    opacity: 0.8; /* Opacity value */
+}
+
+.challenge-container h3 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: var(--primary-color); /* Light text color */
+}
+
+/* Challenge Table Styles */
+.challenge-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.challenge-table th,
+.challenge-table td {
+    padding: 8px 8px;
+    text-align: center;
+    border-bottom: 1px solid #444; /* Darker border color */
+}
+
+.challenge-table th {
+    background-color: #333; /* Darker header background */
+    color: #fff; /* Light text color */
+    font-weight: bold;
+    border-top-left-radius: 8px; /* Rounded top left corner */
+    border-top-right-radius: 8px; /* Rounded top right corner */
+}
+
+.challenge-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light hover color */
+    transition: background-color 0.3s;
+}
+
+.example ol, ul {
+    padding-left: 20px;
+}
+
+.index ul {
+    padding-left: 20px;
+}
+
+/* Editable Table */
+.editable-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.editable-table th,
+.editable-table td {
+    padding: 10px; /* Increased padding for better readability */
+    text-align: center;
+    border: 1px solid #444; /* Darker border color */
+    background-color: #222; /* Darker background for cells */
+    color: #fff; /* Light text color for table cells */
+}
+
+.editable-table th {
+    background-color: #333; /* Even darker background for headers */
+    color: #fff; /* Light text color for headers */
+    font-weight: bold;
+    border-top-left-radius: 8px; /* Rounded top left corner */
+    border-top-right-radius: 8px; /* Rounded top right corner */
+}
+
+.editable-table td input {
+    border: none;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px; /* Padding for input fields */
+    font-size: 14px; /* Font size for input text */
+    background-color: #222; /* Dark background for input fields */
+    color: #fff; /* Light text color for input fields */
+}
+
+.editable-table td input:focus {
+    outline: none;
+    background-color: #333; /* Slightly lighter background on focus */
+    border: 1px solid #555; /* Border on focus for better visibility */
+}
+
+.editable-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light hover color */
+    transition: background-color 0.3s;
+}

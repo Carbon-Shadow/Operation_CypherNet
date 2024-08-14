@@ -1,0 +1,131 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Karmasutra Cipher{% endblock %}
+
+{% block content %}
+
+{% include 'components/timer.html' %}
+
+<main>
+    <div class="main-container">
+        {% include 'components/challenge_button.html' %}
+        <div class="intro">
+            <h2 class="title">Karmasutra Cipher Challenge</h2>
+            <p>The Kamasutra Cipher (Mlecchita Vikalpa) dates back to the 4th century CE. Written by Indian philosopher Vātsyāyana, it's one of the 64 arts in the Kamasutra, focusing on simple substitution encryption and decryption. He called it the art of secret writing. Randomize the letters in the alphabet, then pair them. Iterate through each letter of the plaintext, find the match, and then replace it with the corresponding letter in the pair.</p>
+        </div>
+        <div class="example">
+            <h3>How it Works:</h3>
+            <ol>
+
+            <li><strong>Alphabet Mapping</strong></li>
+            <ul>
+                <li>Start with a standard alphabet (usually abcdefghijklmnopqrstuvwxyz)</li>
+                <li>Create a mapping where each letter in the alphabet is substituted with another letter. This mapping is typically randomized or based on a specific key.</li>
+            </ul>
+
+            <li><strong>Encryption Process:</strong></li>
+            <ul>
+                <li>Given a plaintext message, replace each letter with its corresponding substitute letter according to the predefined mapping.</li>
+                <li>Non-alphabet characters (such as spaces, punctuation) are usually left unchanged.</li>
+            </ul>
+
+            <li><strong>Decryption Process:</strong></li>
+            <ul>
+                <li>To decrypt, use the reverse of the encryption mapping. Each ciphertext letter is substituted back to its original plaintext letter.</li>
+            </ul>
+            </ol> <br>
+            <p>To decrypt a message encrypted with a Caesar cipher, you simply shift the letters back by the same number of places.</p>
+        </div>
+
+        <div class="challenge-container">
+
+            <table class="challenge-table">
+                <h3>Karmasutra Cipher Translator</h3>
+                <thead>
+                    <tr>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                        <th>G</th>
+                        <th>H</th>
+                        <th>I</th>
+                        <th>J</th>
+                        <th>K</th>
+                        <th>L</th>
+                        <th>M</th>
+                        <th>N</th>
+                        <th>O</th>
+                        <th>P</th>
+                        <th>Q</th>
+                        <th>R</th>
+                        <th>S</th>
+                        <th>T</th>
+                        <th>U</th>
+                        <th>V</th>
+                        <th>W</th>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>Z</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>H</td>
+                        <td>P</td>
+                        <td>D</td>
+                        <td>A</td>
+                        <td>R</td>
+                        <td>E</td>
+                        <td>N</td>
+                        <td>X</td>
+                        <td>B</td>
+                        <td>Z</td>
+                        <td>G</td>
+                        <td>Q</td>
+                        <td>J</td>
+                        <td>T</td>
+                        <td>W</td>
+                        <td>C</td>
+                        <td>Y</td>
+                        <td>I</td>
+                        <td>V</td>
+                        <td>L</td>
+                        <td>S</td>
+                        <td>F</td>
+                        <td>M</td>
+                        <td>K</td>
+                        <td>U</td>
+                        <td>O</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="form-wrapper">
+            <div class="form">
+                <p>Decode the following text:</p>
+                <p><span style="color: chartreuse; font-size: x-large;"><strong>{{ challenge_text }}</strong></span></p>
+
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.text.label }}
+                        {{ form.text(size=32) }}
+                    </div>
+                    <div class="button-container">
+                        {{ form.submit(class_="btn-primary") }}
+                    </div>
+                </form>
+
+                {% if result %}
+                    <h3>Encoded Text:</h3>
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+</main>
+{% endblock %}

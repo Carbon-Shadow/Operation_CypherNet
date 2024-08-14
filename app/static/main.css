@@ -1,0 +1,18 @@
+/* main.css */
+
+/* Imports */
+
+@import 'base/_reset.css';
+@import 'base/_global.css';
+@import 'base/_typography.css';
+@import 'base/_variables.css';
+
+@import 'components/_header.css';
+@import 'components/_footer.css';
+@import 'components/_button.css';
+@import 'components/_forms.css';
+@import 'components/_alerts.css';
+
+@import 'pages/_challenges.css';
+@import 'pages/_leaderboard.css';
+@import 'pages/_challenge_template.css';

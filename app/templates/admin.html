@@ -1,0 +1,29 @@
+{% extends 'loggedinbase.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<main>
+    <div class="main-container">
+        <h2 class="title">Admin Dashboard</h2>
+
+        <!-- Database Reset Form -->
+        <div class="challenge-card killswitch">
+            <div class="form-wrapper">
+                <div class="form">
+                    <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+                        <div class="form-group">
+                            {{ form.text.label }}
+                            {{ form.text(size=32) }}
+                        </div>
+                        <div class="button-container">
+                            {{ form.submit(class_="btn-primary") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

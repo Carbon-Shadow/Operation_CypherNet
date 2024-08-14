@@ -1,0 +1,122 @@
+/* _header.css */
+
+header {
+    width: 100%;
+}
+
+header h1 {
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 4px var(--third-color);
+}
+
+.header-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10%;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+      "a b c";
+}
+
+.a { 
+    grid-area: a;
+}
+.a, .c, img {
+    width: 250px; /* Default logo size */
+}
+  
+.b {
+    grid-area: b;
+    text-align: center;
+    padding: var(--spacing-medium);
+}
+
+.user-info {
+    margin-top: 20px;
+}
+
+.user-info #username {
+    text-transform: capitalize;
+    color: var(--secondary-color)
+}
+  
+.c {
+    grid-area: c;
+}
+
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #BB86FC; /* Light accent color */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Timer */
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.timer #result {  
+    text-align: center;
+    margin-bottom: 5px;
+    color: #ff0000; /* Light accent color */
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 480px) {
+    header {
+        padding: 0 2%; /* Further reduce padding on very small screens */
+    }
+
+    .a .c img {
+        width: 80px; /* Adjust logo size for very small screens */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0 5%; /* Reduce padding on smaller screens */
+    }
+
+    .a .c img {
+        width: 90px; /* Adjust logo size for small screens */
+    }
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 1200px) {
+    header {
+        padding: 0 15%; /* Increase padding on larger screens */
+    }
+
+    .a .c img {
+        width: 225px; /* Adjust logo size for larger screens */
+    }
+}
